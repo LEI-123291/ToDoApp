@@ -2,8 +2,7 @@ name: Build JAR
 
 on:
   push:
-    branches:
-      - main   # altera para 'master' se a tua branch principal for 'master'
+    branches: [ "LEI-123291" ]   # altera para 'master' se a tua branch principal for 'master'
 
 jobs:
   build:
