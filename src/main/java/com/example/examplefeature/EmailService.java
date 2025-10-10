@@ -17,6 +17,6 @@ public class EmailService {
         System.out.println("Assunto: " + subject);
         System.out.println("Mensagem:");
         System.out.println(body);
-        System.out.println("--------------------------------------------------");
+        System.out.println("------------------------------------------------");
     }
 }
