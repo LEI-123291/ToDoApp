@@ -54,10 +54,11 @@
             <scope>test</scope>
         </dependency>
 
+        <!-- HTTP client para chamar a API -->
         <dependency>
-            <groupId>com.github.librepdf</groupId>
-            <artifactId>openpdf</artifactId>
-            <version>3.0.0</version>
+            <groupId>com.squareup.okhttp3</groupId>
+            <artifactId>okhttp</artifactId>
+            <version>4.12.0</version>
         </dependency>
 
 
