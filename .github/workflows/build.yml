@@ -1,0 +1,34 @@
+name: Build JAR
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Java 21 (Temurin) with Maven cache
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '21'
+          cache: maven
+
+      - name: Build with Maven (Vaadin production)
+        run: mvn -B -ntp clean package -Pproduction -DskipTests
+
+      # (Opcional) copiar o JAR para a raiz do workspace do job
+      - name: Copy JAR to repo root (workspace)
+        run: cp target/*.jar .
+
+      - name: Upload JAR artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: app-jar
+          path: |
+            target/*.jar
+            ./*.jar
