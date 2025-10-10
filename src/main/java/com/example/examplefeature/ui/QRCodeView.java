@@ -79,7 +79,7 @@ public class QRCodeView extends VerticalLayout {
             MatrixToImageWriter.writeToStream(matrix, "PNG", output);
             return output.toByteArray();
         } catch (IOException e) {
-            throw new RuntimeException("Erro ao criar imagem PNG", e);
+            throw new RuntimeException("Erroo ao criar imagem PNG", e);
         }
     }
 }
