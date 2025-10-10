@@ -33,7 +33,7 @@ src
         └── examplefeature
            └── TaskServiceTest.java                 
 ```
-Ricardo Lourenço
+Ricardo 
 The main entry point into the application is `Application.java`. This class contains the `main()` method that start up 
 the Spring Boot application.
 
