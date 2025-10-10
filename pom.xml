@@ -74,7 +74,7 @@
             <version>3.5.3</version>
         </dependency>
 
-        <!-- Módulo para manipular imagens e ficheiros (usado com Java AWT ou Swing) -->
+        <!-- Módulo para manipular imagens e ficheiros (usadoo com Java AWT ou Swing) -->
         <dependency>
             <groupId>com.google.zxing</groupId>
             <artifactId>javase</artifactId>
