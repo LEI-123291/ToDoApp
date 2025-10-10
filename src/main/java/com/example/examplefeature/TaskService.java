@@ -1,4 +1,5 @@
 package com.example.examplefeature;
+import org.hibernate.annotations.CreationTimestamp;
 
 import org.jspecify.annotations.Nullable;
 import org.springframework.data.domain.Pageable;
