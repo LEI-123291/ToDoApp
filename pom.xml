@@ -62,10 +62,7 @@
         </dependency>
 
 
-
-
-
-
+        <!-- Módulo para manipular imagens e ficheiros (usadoo com Java AWT ou Swing) -->
         <dependency>
             <groupId>com.github.librepdf</groupId>
             <artifactId>openpdf</artifactId>
