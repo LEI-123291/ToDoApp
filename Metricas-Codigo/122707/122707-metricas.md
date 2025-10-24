@@ -1,6 +1,6 @@
  ##                              Análise de Qualidade e Métricas (Miguel Nunes-122707)
 
-## Classes analisadas
+## Classes analisadas 
 com.example.examplefeature.pdf.PdfService
 com.example.examplefeature.pdf.PdfView
 
