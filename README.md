@@ -2,10 +2,62 @@
 
 - [ ] TODO Replace or update this README with instructions relevant to your application
 https://www.youtube.com/watch?v=FysjBNtIFkk
+
+
+
+## ⚙️ Pipeline de Automação (GitHub Actions)
+
+O projeto inclui uma **pipeline de CI/CD** configurada com **GitHub Actions** para automatizar a construção (build) do artefacto `.jar` com o Maven.
+
+Esta pipeline é executada **automaticamente em cada _push_** para a branch principal (`LEI-123291`).  
+Ela realiza as seguintes etapas:
+
+1. Faz o _checkout_ do repositório.  
+2. Configura o ambiente Java (versão 21, distribuição Temurin).  
+3. Executa o comando `mvn clean package` para compilar o projeto e gerar o `.jar`.  
+4. Copia o `.jar` gerado para a raiz do repositório.  
+5. Publica o ficheiro `.jar` como artefacto do workflow (disponível para download no separador **Actions**).
+
+###  Excerto do ficheiro `build.yml`
+
+
+name: Build JAR
+
+on:
+  push:
+    branches: [ "LEI-123291" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Java 21
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '21'
+
+      - name: Build with Maven
+        run: mvn -B -ntp clean package
+
+      - name: Copy jar to root
+        run: cp target/*.jar .
+
+      - name: Upload JAR artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: app-jar
+          path: target/*.jar
+
+
 ## Project Structure
 
 The sources of your App have the following structure:
-BOAS
+
 
 ```
 src
@@ -34,7 +86,7 @@ src
         └── examplefeature
            └── TaskServiceTest.java                 
 ```
-Ricardo Lourenço
+
 The main entry point into the application is `Application.java`. This class contains the `main()` method that start up 
 the Spring Boot application.
 
