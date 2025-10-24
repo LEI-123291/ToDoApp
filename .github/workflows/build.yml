@@ -2,7 +2,7 @@ name: Build JAR
 
 on:
   push:
-    branches: [ "LEI-123291" ]   # muda se a tua branch principal tiver outro nome
+    branches: [ "LEI-123291" ]
 
 jobs:
   build:
