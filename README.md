@@ -53,6 +53,7 @@ jobs:
           name: app-jar
           path: target/*.jar
 
+```
 
 ## Project Structure
 
