@@ -5,6 +5,7 @@ https://www.youtube.com/watch?v=FysjBNtIFkk
 ## Project Structure
 
 The sources of your App have the following structure:
+BOAS
 
 ```
 src
