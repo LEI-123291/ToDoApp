@@ -16,38 +16,33 @@ import com.vaadin.flow.theme.lumo.LumoUtility;
 import java.io.IOException;
 import java.util.Map;
 
+@PageTitle("Câmbios")
+@Menu(order = 80, icon = "line-awesome/svg/money-bill-wave-solid.svg")
 @Route(value = "currency", layout = MainLayout.class)
-@PageTitle("Forex (EUR)")
-@Menu(title = "Forex", icon = "la la-dollar-sign")
 public class CurrencyView extends VerticalLayout {
+
+    record Row(String moeda, Double taxa) {}
 
     private final CurrencyService service;
     private final Grid<Row> grid = new Grid<>(Row.class, false);
-
-    public static class Row {
-        private final String currency;
-        private final Double rate;
-        public Row(String currency, Double rate) { this.currency = currency; this.rate = rate; }
-        public String getCurrency() { return currency; }
-        public Double getRate() { return rate; }
-    }
 
     public CurrencyView(CurrencyService service) {
         this.service = service;
 
         setSizeFull();
-        addClassNames(LumoUtility.Padding.MEDIUM, LumoUtility.Gap.SMALL);
+        addClassNames(LumoUtility.Padding.LARGE, LumoUtility.Gap.LARGE);
 
-        H2 title = new H2("💱 Taxas de câmbio (base EUR)");
-        Button refresh = new Button("Atualizar", e -> loadData());
+        var title = new H2("Taxas de Câmbio (base EUR)");
+        var refresh = new Button("Atualizar", e -> loadData());
 
-        grid.addColumn(Row::getCurrency).setHeader("Moeda").setAutoWidth(true);
-        grid.addColumn(Row::getRate).setHeader("Taxa").setAutoWidth(true);
+        grid.addColumn(Row::moeda).setHeader("Moeda").setAutoWidth(true);
+        grid.addColumn(Row::taxa).setHeader("Taxa").setAutoWidth(true);
 
-        HorizontalLayout actions = new HorizontalLayout(refresh);
+        var actions = new HorizontalLayout(refresh);
+        actions.setAlignItems(Alignment.CENTER);
         add(title, actions, grid);
 
-        loadData(); // carrega ao abrir, mas agora com try/catch
+        loadData();
     }
 
     private void loadData() {
@@ -62,7 +57,7 @@ public class CurrencyView extends VerticalLayout {
             }
         } catch (IOException ex) {
             Notification.show("Erro a obter câmbios: " + ex.getMessage(), 5000, Notification.Position.MIDDLE);
-            grid.setItems(); // limpa grelha
+            grid.setItems(); // limpar grelha
         }
     }
 }
