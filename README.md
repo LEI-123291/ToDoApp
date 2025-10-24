@@ -20,7 +20,7 @@ Ela realiza as seguintes etapas:
 
 ###  Excerto do ficheiro `build.yml`
 
-
+```yaml
 name: Build JAR
 
 on:
