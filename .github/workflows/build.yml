@@ -2,7 +2,10 @@ name: Build JAR
 
 on:
   push:
-    branches: [ "LEI-123291" ]
+    branches: [ "LEI-123291" ]   # branch principal
+
+permissions:
+  contents: write   # permite fazer commit se quiseres no futuro
 
 jobs:
   build:
@@ -21,6 +24,7 @@ jobs:
       - name: Build with Maven
         run: mvn -B -ntp clean package
 
+      # 👇 Este é o passo pedido no D5
       - name: Copy jar to root
         run: cp target/*.jar .
 
