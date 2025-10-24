@@ -45,7 +45,7 @@ A classe cumpre o objetivo (gerar PDF) mas concentra demasiada lógica no métod
 Código limpo e direto para a UI. O método `gerarPdf()` monta a URL, configura o `Anchor` e dispara o download. Falta apenas robustez/UX: tratamento de erro visual, nome do ficheiro e desativação do botão durante a geração.
 
 **Ações sugeridas (refactoring/UX):**
-- Renomear componentes para legibilidade (`gerar` → `gerarPdfButton`).
+- Renomear componentes para legibilidade e se perceber melhor (`gerar` → `gerarPdfButton`).
 - Definir `download="tarefas-YYYYMMDD.pdf"` no `Anchor`.
 - Desativar/ativar o botão durante a geração; `Notification` em caso de erro.
 - (Opcional) i18n dos textos (“Gerar PDF”, “Descarregar PDF”, “PDF gerado.”).
