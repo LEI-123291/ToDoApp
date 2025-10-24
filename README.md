@@ -5,7 +5,7 @@ https://www.youtube.com/watch?v=FysjBNtIFkk
 
 ## **Comentário após Inspect Code e Qodana**
 
-Após a execução das ferramentas Inspect Code e Qodana, foram identificados problemas relacionados sobretudo com dependências vulneráveis (nas bibliotecas logback-core e commons-lang3). As análises de segurança do Qodana evidenciaram que estas versões contêm CVEs de severidade alta. As issues correspondentes foram criadas no GitHub com descrição detalhada, impacto e proposta de correção.
+Após a execução das ferramentas Inspect Code e Qodana, foram identificados problemas relacionados sobretudo com dependências vulneráveis (nas bibliotecas logback-core e commons-lang3). As análises de segurança do Qodana evidenciaram que estas versões contêm CVEs de gravidade alta. As issues correspondentes foram criadas no GitHub com descrição detalhada, impacto e proposta de correção.
 No geral, a aplicação apresenta boa estrutura e poucos problemas de código Java, mas necessita de atualização das dependências para garantir conformidade e segurança.
 
 
