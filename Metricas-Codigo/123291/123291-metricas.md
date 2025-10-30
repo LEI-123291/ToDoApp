@@ -67,5 +67,4 @@ IntelliJ e MetricsTree (Assumido)
 | QRCodeView | 38 | 7 | 1 | 0.0 | Simples, mas a lógica de geração de imagem deve ser extraída para um Serviço. |
 | createQRCodeImage(...) | 10 | 2 | 1 | 1.0 | Método funcional, mas representa uma quebra do Princípio da Responsabilidade Única no *View*. |
 
----
-Gostaria que eu fizesse a análise das métricas para a camada de serviços (`TaskService`) ou para outra funcionalidade?
+
