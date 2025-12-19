@@ -16,5 +16,3 @@ Para provar o cumprimento dos objetivos pedagógicos, as evidências de que os c
 * **Base de Dados:** PostgreSQL (criado para integração com Java)
 * **WordPress & MySQL:** (via Docker-Compose)
 * **MongoDB:** (interação via terminal interativo)
-
-## Conteúdo desta pasta:
